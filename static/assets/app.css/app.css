@@ -1,0 +1,217 @@
+#rev{
+  color:#008093;;
+}
+.contact-us-content {
+    padding: 25px;
+ 
+}
+.contact-us-content>.row, {
+    padding: 15px 0px;
+    margin: 0px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.form-control-feedback-success, .form-control-feedback-warning{
+    display:none;
+}
+/* form validation*/
+.has-success .form-control-input{
+    border:1px solid green;
+}
+.has-success .form-control-feedback-success{
+    color:green;
+    font-family: inherit;
+    display:block;
+}
+.has-success label{
+    color:green;
+}
+.has-warning .form-control-input{
+    border:1px solid #f0ad4e;
+}
+.has-warning .form-control-feedback-warning{
+    color:#f0ad4e;
+    font-family: inherit;
+    display:block;
+}
+.has-warning label{
+    color:#f0ad4e;
+}
+#map{
+	height:400px;
+	width:100%;
+	margin-top: 10px;
+}
+.contact-us-border{
+		border:none;
+	}
+#contact_error ,#feedback_error,#apply_error,#service_error{
+    color: red;
+    width: 100%;
+    margin: 10px 0px;
+}
+ .service-heading {
+    font-size: 32px;
+    font-weight: 600;
+    color: #000000;
+}
+
+
+.margin{
+margin-top: 50px;
+}
+
+.people-input {
+    padding: 0px 0px 0px 10px;
+}
+.no-padding {
+    padding: 0px;
+}
+
+.career-footer ,.service-footer,.feedback-footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: end;
+    justify-content: center;
+    padding: 15px;
+    border-top: 1px solid #e9ecef;
+}
+/* for video */
+body {
+  margin: 0;
+  background: #000; 
+}
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ background: url('The_Cucumber.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+.stopfade { 
+   opacity: .5;
+}
+button.btn.btn-secondary {
+    /* padding-left: 4px; */
+    margin-right: 15px;
+}
+.card-text {
+    margin-top: 18px;
+    padding-right: 10px;
+    text-align: justify;
+    letter-spacing: -1px;
+    color: #fff;
+}
+.card-text-career {
+    margin-top: 18px;
+    padding-right: 10px;
+    text-align: justify;
+    letter-spacing: 1px;
+    color: #008093;
+}
+label.form-control-label {
+    color: #003940;
+}
+
+
+@media screen and (max-width: 414px) { 
+  /*div{width:70%;}  */
+ #mob-home{display:auto;}
+ #home { display: none; } 
+}
+@media screen and (min-width: 500px) {
+  #mob-home{display:none;}
+ #home { display: auto; } 
+
+} 
+
+
+
+/* social network */
+
+.affix-top {
+    position: absolute;
+    top: 35%;
+    left: 10px;
+    z-index: 1020;
+}
+.share-button-banner {
+    display: table;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-image: initial;
+    border-radius: 100%;
+    text-decoration: none;
+}
+.share-container {
+    display: table-cell;
+	
+    padding-top: 2px;
+
+}
+@media screen and (max-width: 414px) {
+  #social{
+	  display:none;
+  } } 
+} 
+/* social network */
+
+.footer-content {
+    height: 90px;
+    background: #000;
+    color: #fff;
+    margin: 0px;
+}
+.footer-content>div {
+    text-align: center;
+}
+
+.padding-15 {
+    padding: 15px;
+}
+
+
+.facebook-icon {
+    padding: 9px 16px;
+}
+
+.link-page {
+    background: #0c3e69;
+    border-radius: 50%;
+    text-decoration: none;
+    margin: 0px 10px;
+    color: #fff;
+}
+.instagram-icon {
+    padding: 9px 13px;
+}
+.twitter-icon {
+    padding: 8px 11px;
+}
+.footer-content>div {
+    text-align: center;
+}
+section#footer {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+div#twitter-button:hover,div#facebook-button:hover,div#google-button:hover {
+  color: #042b4c !important;
+/* social network */
