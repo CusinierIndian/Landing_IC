@@ -1,27 +1,65 @@
 $(document).ready(function () {
 	
-	$("#service-link").click(function() {
-$("#service").slideUp("slow", function() {
-$("#service-form").slideDown("slow");
-});
-});
 
-$("#cancel").click(function() {
-$("#service-form").slideUp("slow", function() {
-$("#service").slideDown("slow");
-});
-});
-$("#feedback-link").click(function() {
-$("#feedback").slideUp("slow", function() {
-$("#feedback-form").slideDown("slow");
-});
-});
 
-$("#feedback-cancel").click(function() {
-$("#feedback-form").slideUp("slow", function() {
-$("#feedback").slideDown("slow");
-});
-});
+
+    $("#service-link").click(function(){
+       
+        $("#service-form").show(1000);
+       
+          
+    });
+
+     $("#feedback-link").click(function(){
+        $("#feedback").hide(1000);
+        $("#feedback-form").show(1000);
+          
+    });
+
+    $("#feedback-cancel").click(function(){
+        $("#feedback").show(1000);
+        $("#feedback-form").hide(1000);
+        
+            $('#feedback_name').val('');
+                    $('#feedback_email').val('');
+                    $('#feedback_phone_no').val('');
+                    $('#feedback_cook_name').val('');
+                    $('#feedback_comment').val('');
+
+        });
+
+    
+
+
+    $("#cancel").click(function(){
+        $("#service-form").hide(1000);
+
+               $('#service_name').val('');
+                $('#service_email').val('');
+                $('#service_phone_no').val('');
+                $('#service_location').val('');
+                $('#cook_preferences').val('');
+                $('#no_of_people').val('');
+                $('#service_address').val('');
+                $('#service_landmark').val('');
+                $('#service_pincode').val('');
+                $('#service_alternate_phone_no').val('');
+            
+
+        });
+
+    
+
+$("#apply_cancel").click(function(){
+                $('#apply_name').val('');
+                $('#apply_email').val('');
+                $('#apply_phone_no').val('');
+            
+
+        });
+
+
+
 
 /* contact form validation 	*/
 
@@ -400,6 +438,7 @@ var validateEmail = function (data) {
 
     console.log('validate email', data);
 
+
     return data.match(emailPattern) ? true : false;
 
 }
@@ -507,8 +546,10 @@ var customerFeedback = function (el) {
 
     requestData.customerPhone = $('#feedback_phone_no').val();
 
+
     requestData.feedback = $('#feedback_comment').val();
     requestData.cookName = $('#feedback_cook_name').val();
+    
 
     console.log('form data', requestData);
 
@@ -571,11 +612,11 @@ var customerFeedback = function (el) {
 
                 }
 
-                    $('#feedback_name').val();
-                    $('#feedback_email').val();
-                    $('#feedback_phone_no').val();
-                    $('#feedback_cook_name').val();
-                    $('#feedback_comment').val();
+                    $('#feedback_name').val('');
+                    $('#feedback_email').val('');
+                    $('#feedback_phone_no').val('');
+                    $('#feedback_cook_name').val('');
+                    $('#feedback_comment').val('');
             },
 
             error: function (data) {

@@ -32,7 +32,7 @@
   
   
 </head>
-<body data-spy="scroll" data-target="#nav"  class="rtl" >
+<body class="rtl" >
 <section id="menu-a" data-rv-view="135">
 
     <nav  id="nav" class="navbar navbar-dropdown transparent navbar-fixed-top bg-color">
@@ -54,11 +54,11 @@
                     </button>
 
                     <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
-					<li class="nav-item"><a class="nav-link link" href="#home">HOME</a></li>
+					<li class="nav-item"><a class="nav-link link" href="#menu-a">HOME</a></li>
 					<li class="nav-item dropdown"><a class="nav-link link" href="#whyus" aria-expanded="false">WHY US</a></li>
 					<li class="nav-item"><a class="nav-link link" href="#service" aria-expanded="false">SERVICES</a></li>
 					<li class="nav-item"><a class="nav-link link" href="#career" aria-expanded="false">CAREER</a></li>
-					<li class="nav-item"><a class="nav-link link" href="#contactus" aria-expanded="false"><p>CONTACT US</p></a></li>
+					<li class="nav-item"><a class="nav-link link" href="#contactus" aria-expanded="false">CONTACT US</a></li>
 					<li class="nav-item"></li>
 					</ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
@@ -149,7 +149,7 @@
 
 
  
-<section class="mbr-cards mbr-section mbr-section-nopadding" id="whyus" data-rv-view="122" style="background-color:#000; padding-top: 60px; padding-bottom:0px;">
+<section class="mbr-cards mbr-section mbr-section-nopadding" id="whyus" data-rv-view="122" style="background-color:#000; padding-top: 80px; padding-bottom:0px;">
 
  <div class="mbr-section mbr-section__container mbr-section__container--middle">
             <div class="container">
@@ -229,7 +229,7 @@
             <div class="col-md-8 col-md-offset-2 text-xs-center">
                 <h3 class="mbr-section-title display-2-no-bg">SERVICES</h3>
                 <div class="lead"><p class="card-text">Mobirise has provided for website developers a growing library of modern blocks which can be used either partially or in full for every website developed through the builder.</p></div>
-                <div><a id="service-link" class="btn btn-secondary">BookNow</a></div>
+                <div><a id="service-link" href="#service-form" class="btn btn-secondary">BookNow</a></div>
             </div>
         </div>
     </div>
@@ -237,7 +237,7 @@
 <!--<div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; visibility: hidden; z-index: 100;" id="jarallax-container-1"><div style="background-position: 50% 50%; background-size: 100% auto; background-repeat: no-repeat no-repeat; background-image: url(assets/images/mbr-7.jpg;); position: fixed; top: 0px; left: 0px; width: 1349px; height: 899.333px; overflow: hidden; pointer-events: none; margin-left: 0px; margin-top: -286.667px; visibility: visible; transform: translate3d(0px, -3.61px, 0px);"></div></div>-->
 
 
- <section class="mbr-section" id="service-form" data-rv-view="181" style="background-color: rgb(255, 255, 255); padding-top: 120px; padding-bottom: 120px; display:none ">
+ <section class="mbr-section" id="service-form" data-rv-view="181" style="background-color: rgb(255, 255, 255); padding-top: 120px; padding-bottom: 120px; display:none">
  <div class="mbr-section mbr-section__container mbr-section__container--middle">
             <div class="container">
                 <div class="row">
@@ -354,8 +354,8 @@
           <!-- Modal Footer -->
 		   
           <div class="service-footer">
-           
-            <button id="cancel" type="button" class="btn btn-secondary">Cancel</button>
+            <a href="#service" id="cancel" class="btn btn-secondary" role="button">Cancel</a>
+            <!--<button id="cancel" type="button" class="btn btn-secondary">Cancel</button> -->
             <button type="submit" class="btn btn-info" onclick="applyForService(this)">Book</button>
           </div>
 
@@ -471,7 +471,7 @@
 			<div id="apply_error"></div>
             <div class="career-footer">
             
-            <button type="button" class="btn btn-secondary">Cancel</button>
+            <button id="apply_cancel" type="button" class="btn btn-secondary">Cancel</button>
             <button type="submit" class="btn btn-info"
               onclick="applyForCarrer(this)">Apply</button>
           </div>            
@@ -581,7 +581,7 @@
             <div id="feedback_error"></div>
             <div class="feedback-footer">
             <div id="feedback_error" class="pull-left"></div>
-            <button type="button" id="feedback-cancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" id="feedback-cancel" class="btn btn-secondary">Cancel</button>
             <button type="submit" class="btn btn-info" onclick="customerFeedback(this)">Submit</button>
             </div>
  </div>
@@ -698,25 +698,26 @@
     </script>
    <script>
   $.ajax({
-            url: 'https://api.github.com/users',
+            url: 'http://127.0.0.1:5000/ic/getfeedback',
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             dataType: 'json',
             crossDomain: true,
           
-            success: function (loader) {
-      console.log(loader.length);
+            success: function (data) {
+      if (data.notification.code == 200)
+{
             
 
         
-       $.each(loader, function(index, element) {
+       $.each(data.data, function(index, element) {
         //if(index < 2)
         $('#rev').append(
   $('<div/>')
     .addClass("col-xs-12 col-sm-6 col-md-4").append( $('<div>').addClass("card")
-    .append( $('<div>').attr("id", " comment").addClass("card-block").append($('<em/>').append($('<q/>').append(loader[index]. avatar_url))))
+    .append( $('<div>').attr("id", " comment").addClass("card-block").append($('<em/>').append($('<q/>').append(data.data[index].latestComment))))
   
-  .append( $('<div/>').attr("id", "custname").addClass("card-footer text-muted").append($('<div/>').append(loader[index].login))))
+  .append( $('<div/>').attr("id", "custname").addClass("card-footer text-muted").append($('<div/>').append(data.data[index].customerName))))
       
 );                   
 return ( index != 2 );
@@ -724,6 +725,14 @@ return ( index != 2 );
 
 });
 }
+else {
+
+                    $('#error-modal').modal('show');
+
+                }
+
+}
+
 });
        
   </script>
