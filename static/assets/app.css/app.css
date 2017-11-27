@@ -111,6 +111,13 @@ button.btn.btn-secondary {
     letter-spacing: -1px;
     color: #fff;
 }
+.card-text-service {
+    margin-top: 18px;
+    padding-right: 10px;
+    text-align: justify;
+    letter-spacing: -1px;
+    color: #042b4c;
+}
 .card-text-career {
     margin-top: 18px;
     padding-right: 10px;
@@ -213,5 +220,37 @@ section#footer {
     padding-top: 0px;
 }
 div#twitter-button:hover,div#facebook-button:hover,div#google-button:hover {
-  color: #042b4c !important;
+  color: #ccf015  !important;
+}
+.hidden{
+    display: none;
+}
+
+#sc{
+
+                position: fixed;
+
+    top: 74px;
+
+    left: 0px;
+
+    right: 0px;
+
+    z-index: 5000;
+
+}
+
+#sc1{
+
+                position: fixed;
+
+    top: 74px;
+
+    left: 0px;
+
+    right: 0px;
+
+    z-index: 5000;
+
+}
 /* social network */

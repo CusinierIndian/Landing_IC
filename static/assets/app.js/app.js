@@ -506,23 +506,37 @@ var contactUs = function () {
             success: function (data) {
 
                 if (data.notification.code == 200) {
+                    console.log('vinay');
 
-                    console.log("apply successfull")
-                    $('#carrer-modal').modal('show');
+                     $('#msg5').text("Thanks!! We will contact you soon"); 
+                    $('#sc').removeClass('hidden');
+                    setTimeout(function(){
+                     $("#sc").addClass('hidden');
+
+  }, 7000)
+                  
 
                 }
 
                 else {
 
-                    $('#error-modal').modal('show');
+                      $('#msg6').text("Failed!! Email or phone number is already with us...!!Try again"); 
+                     $('#sc1').removeClass('hidden');
+                    setTimeout(function(){
+                     $("#sc1").addClass('hidden');
+
+  }, 7000);
 
                 }
+
 
                 $('#contact_name').val('');
                 $('#contact_email').val('');
                 $('#contact_phone_no').val('');
 
             }
+
+
 
         });
 
@@ -598,17 +612,29 @@ var customerFeedback = function (el) {
 
             success: function (data) {
 
-                $('#feedback-modal').modal('hide');
+                $('#feedback-form').hide(1000);
+                $('#feedback').show(1000);
+
 
                 if (data.notification.code == 200) {
 
-                    $('#feedBackSuccess-modal').modal('show');
+                    $('#msg5').text("Thanks!! We will contact you soon"); 
+                    $('#sc').removeClass('hidden');
+                    setTimeout(function(){
+                     $("#sc").addClass('hidden');
+
+  }, 7000); 
 
                 }
 
                 else {
 
-                    $('#error-modal').modal('show');
+                      $('#msg6').text("Failed!! Email or phone number is already with us...!!Try again"); 
+                     $('#sc1').removeClass('hidden');
+                    setTimeout(function(){
+                     $("#sc1").addClass('hidden');
+
+  }, 7000);
 
                 }
 
@@ -625,7 +651,12 @@ var customerFeedback = function (el) {
 
                     console.log("submission  failed");
 
-                    $('#error-modal').modal('show');
+                      $('#msg6').text("Failed!! Email or phone number is already with us...!!Try again"); 
+                     $('#sc1').removeClass('hidden');
+                    setTimeout(function(){
+                     $("#sc1").addClass('hidden');
+
+  }, 7000);
 
                 }
 
@@ -703,17 +734,28 @@ var applyForCarrer = function (el) {
 
             success: function (data) {
 
-                $('#apply-modal').modal('hide');
+                
 
                 if (data.notification.code == 200) {
+                    
+                    $('#msg5').text("Thanks!! We will contact you soon"); 
+                    $('#sc').removeClass('hidden');
+                    setTimeout(function(){
+                     $("#sc").addClass('hidden');
 
-                    $('#carrer-modal').modal('show');
+  }, 7000); 
 
                 }
 
                 else {
+                       $('#msg6').text("Failed!! Email or phone number is already with us...!!Try again"); 
+                     $('#sc1').removeClass('hidden');
+                    setTimeout(function(){
+                     $("#sc1").addClass('hidden');
 
-                    $('#error-modal').modal('show');
+  }, 7000);
+
+                   /* $('#error-modal').modal('show'); */
 
                 }
 
@@ -731,7 +773,12 @@ var applyForCarrer = function (el) {
 
                     console.log("apply failed");
 
-                    $('#error-modal').modal('show');
+                    $('#msg6').text("Failed!! Email or phone number is already with us...!!Try again"); 
+                     $('#sc1').removeClass('hidden');
+                    setTimeout(function(){
+                     $("#sc1").addClass('hidden');
+
+  }, 7000);
 
                 }
 
@@ -874,19 +921,33 @@ var applyForService = function (el){
 
             success: function (data) {
 
-                $('#service-household-modal').modal('hide');
+                 $('#service-form').hide(1000);
+                $('#service').show(1000);
 
                 if (data.notification.code == 200) {
 
                     console.log("apply successfull")
 
-                    $('#carrer-modal').modal('show');
+                     $('#msg5').text("Thanks!! We will contact you soon"); 
+                    $('#sc').removeClass('hidden');
+                    setTimeout(function(){
+                     $("#sc").addClass('hidden');
+
+  }, 7000); 
+  
+  
+  
 
                 }
 
                 else {
 
-                    $('#error-modal').modal('show');
+                       $('#msg6').text("Failed!! Email or phone number is already with us...!!Try again"); 
+                     $('#sc1').removeClass('hidden');
+                    setTimeout(function(){
+                     $("#sc1").addClass('hidden');
+
+  }, 7000);
 
                 }
 
@@ -902,6 +963,7 @@ var applyForService = function (el){
                 $('#service_alternate_phone_no').val('');
             }
 
+
         });
 
     }
@@ -910,7 +972,11 @@ var applyForService = function (el){
 	
 }
 
-
+/*window.setTimeout(function() {
+    $(".alert").fadeTo(1000, 0).slideUp(500, function(){
+        $(this).remove(); 
+    });
+}, 4000);*/
 
 
 
