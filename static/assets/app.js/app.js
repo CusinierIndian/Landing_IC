@@ -398,7 +398,7 @@ if ((isNaN(data))) {
 (function() {
   var bOptions = {
     "household": ['Gachibowli', 'Kondapur', 'Madhapur','Miyapur'],
-    "ocassion": ['Gachibowli', 'Kondapur', 'Madhapur','Miyapur','Lingampally','Mehdipatnam','Ameerpet','Begumpet']
+    "occasion": ['Gachibowli', 'Kondapur', 'Madhapur','Miyapur','Lingampally','Mehdipatnam','Ameerpet','Begumpet']
   };
 
   var service_booking = document.getElementById('service_booking');
@@ -533,6 +533,21 @@ var contactUs = function () {
                 $('#contact_name').val('');
                 $('#contact_email').val('');
                 $('#contact_phone_no').val('');
+
+            },
+
+            error: function (data) {
+
+                if (data.notification.code == 500) {
+
+                    $('#msg6').text("Failed!! Email or phone number is already with us...!!Try again"); 
+                     $('#sc1').removeClass('hidden');
+                    setTimeout(function(){
+                     $("#sc1").addClass('hidden');
+
+  }, 7000);
+
+                }
 
             }
 
@@ -961,6 +976,20 @@ var applyForService = function (el){
                 $('#service_landmark').val('');
                 $('#service_pincode').val('');
                 $('#service_alternate_phone_no').val('');
+            },
+            error: function (data) {
+
+                if (data.notification.code == 500) {
+
+                    $('#msg6').text("Failed!! Email or phone number is already with us...!!Try again"); 
+                     $('#sc1').removeClass('hidden');
+                    setTimeout(function(){
+                     $("#sc1").addClass('hidden');
+
+  }, 7000);
+
+                }
+
             }
 
 
