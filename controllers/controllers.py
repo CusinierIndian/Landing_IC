@@ -126,7 +126,7 @@ class BookingController(BaseController):
 			, cookBookingDetails.get('numberOfMembers'), cookBookingDetails.get('pincode')
 			, cookBookingDetails.get('city'), cookBookingDetails.get('state'), cookBookingDetails.get('address')
 			, cookBookingDetails.get('alternatePhoneNo'))
-		elif(bookingFor == 'occasion'):
+		elif(bookingFor == 'ocassion'):
 			bookACook = OcassionsBooking(str(generateUniqueId()), cookBookingDetails.get('customerName')
 			, cookBookingDetails.get('customerLocation'), cookBookingDetails.get('customerPhone')
 			, cookBookingDetails.get('customerEmail'), cookBookingDetails.get('cookPreference')
